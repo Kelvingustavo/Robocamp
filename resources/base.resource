@@ -6,6 +6,9 @@ Resource    ../resources/components/toast.resource
 Resource    ../resources/components/nav.resource
 Resource    ../resources/pages/enroll.resource
 
+Resource    database.resource
+Library    JSONLibrary
+
 *** Keywords ***
 # Helpers
 Do Login
@@ -15,4 +18,11 @@ Do Login
     Submit Credencials
     User should be logged in    ${user}[name]
 
+Get Fixtures
+    [Arguments]    ${fixture_file}
 
+    ${fixture}    Load Json From File    
+    ...           ${EXECDIR}/resources/fixtures/${fixture_file}.json
+    ...           encoding=UTF-8
+
+    [Return]      ${fixture}

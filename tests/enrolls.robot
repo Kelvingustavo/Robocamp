@@ -2,27 +2,23 @@
 Documentation    Suite de testes de matricula de alunos
 Resource    ../resources/base.resource
 
+
 *** Test Cases ***
 Deve Matricular um aluno
 
-    #Falcao não mexer
-    #Smart
-    #11/10/2022
+    ${admin}      Get Fixtures    admin
+    ${student}    Get Fixtures    student
 
-    ${admin}    Create Dictionary
-    ...        name=Admin
-    ...        email=admin@smartbit.com
-    ...        pass=qacademy
-
+    Reset Student Enroll    ${student}[email]
     Do Login    ${admin}
 
     Go to Enrolls
     Go to Enroll Form
-    Select Student     Falcão Não mexer
-    Select Plan        Smart
-    Fill start Date    10
-
+    Select Student     ${student}[name]
+    Select Plan        ${student}[enroll][plan]
+    Take Screenshot    
+    Fill Start Date
+    Submit Enroll Form
+    Verify Toaster    Matricula cadastrada com sucesso
 
     Sleep    5
-
-

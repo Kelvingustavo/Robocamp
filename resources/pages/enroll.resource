@@ -23,8 +23,7 @@ Select Plan
 
     Click        css=div[class$=option] >> text=${plan}
     
-Fill start Date
-    [Arguments]    ${date}
+Fill Start Date
 
     Focus    css=input[name=start_date]
 
@@ -33,3 +32,6 @@ Fill start Date
     FOR    ${number}    IN    @{start_date}
         Keyboard Key    press     ${number} 
     END
+
+Submit Enroll Form
+    Click    css=button >> text=Salvar
