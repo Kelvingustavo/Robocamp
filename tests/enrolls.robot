@@ -19,6 +19,6 @@ Deve Matricular um aluno
     Take Screenshot    
     Fill Start Date
     Submit Enroll Form
-    Verify Toaster    Matricula cadastrada com sucesso
+    Verify Toaster    Matrícula cadastrada com sucesso
 
     Sleep    5

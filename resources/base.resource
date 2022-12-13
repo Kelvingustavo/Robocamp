@@ -7,7 +7,7 @@ Resource    ../resources/components/nav.resource
 Resource    ../resources/pages/enroll.resource
 
 Resource    database.resource
-Library    JSONLibrary
+Library     JSONLibrary
 
 *** Keywords ***
 # Helpers
@@ -22,7 +22,7 @@ Get Fixtures
     [Arguments]    ${fixture_file}
 
     ${fixture}    Load Json From File    
-    ...           ${EXECDIR}/resources/fixtures/${fixture_file}.json
+    ...           ${EXECDIR}/web/resources/fixtures/${fixture_file}.json
     ...           encoding=UTF-8
 
     [Return]      ${fixture}
