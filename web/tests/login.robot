@@ -8,7 +8,7 @@ Login do Administrador
     Go to login Page
     Fill Credencials    admin@smartbit.com    qacademy
     Submit Credencials
-    User should be logged in    Admin
+    User should be logged in    admin
 
 Email não cadastrado
     Go to login Page
